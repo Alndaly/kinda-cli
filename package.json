@@ -1,0 +1,42 @@
+{
+  "name": "kinda-cli",
+  "version": "0.0.1",
+  "author": "alnda",
+  "type": "module",
+  "description": "kinda脚手架",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "release": "standard-version",
+    "push": "git push --follow-tags origin master",
+    "commit": "git cz"
+  },
+  "keywords": [
+    "node",
+    "yarn",
+    "kinda"
+  ],
+  "bin": {
+    "kinda": "./lib/cli.js"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.27.2",
+    "chalk": "^5.0.1",
+    "commander": "^9.4.0",
+    "cross-spawn": "^7.0.3",
+    "download-git-repo": "^3.0.2",
+    "figlet": "^1.5.2",
+    "fs-extra": "^10.1.0",
+    "inquirer": "^8.0.0",
+    "typescript": "^4.8.3",
+    "util": "^0.12.4"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^17.1.2",
+    "@commitlint/config-conventional": "^17.1.0",
+    "commitlint-config-cz": "^0.13.3",
+    "cz-customizable": "^7.0.0",
+    "git-cz": "^4.9.0",
+    "standard-version": "^9.5.0"
+  }
+}
