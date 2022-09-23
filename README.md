@@ -35,7 +35,7 @@ kinda -h
 ## Developer
 
 ```shell
-git clone https://https://github.com/Alndaly/create-kinda
+git clone https://github.com/Alndaly/kinda-cli
 cd create-kinda
 yarn
 ```

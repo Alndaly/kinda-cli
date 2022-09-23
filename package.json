@@ -4,10 +4,11 @@
   "author": "alnda",
   "type": "module",
   "description": "kinda脚手架",
+  "repository": "https://github.com/Alndaly/kinda-cli",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "standard-version",
-    "push": "git push --follow-tags origin master",
+    "push": "git push --follow-tags origin develop",
     "commit": "git cz"
   },
   "keywords": [
