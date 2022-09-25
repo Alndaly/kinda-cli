@@ -18,7 +18,7 @@
     "kinda"
   ],
   "bin": {
-    "kinda": "./lib/cli.js"
+    "kinda": "./bin/cli.js"
   },
   "license": "ISC",
   "dependencies": {
