@@ -22,16 +22,23 @@
   },
   "license": "ISC",
   "dependencies": {
+    "@docusaurus/core": "^2.1.0",
     "axios": "^0.27.2",
     "chalk": "^5.0.1",
     "child_process": "^1.0.2",
     "commander": "^9.4.0",
     "cross-spawn": "^7.0.3",
-    "@docusaurus/core": "^2.1.0",
     "download-git-repo": "^3.0.2",
     "figlet": "^1.5.2",
     "fs-extra": "^10.1.0",
     "inquirer": "^8.0.0",
+    "module": "^1.2.5",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-live": "^2.4.1",
+    "react-router": "^6.3.0",
+    "react-router-config": "^5.1.1",
+    "semver": "^7.3.7",
     "typescript": "^4.8.3",
     "util": "^0.12.4"
   },
@@ -42,5 +49,8 @@
     "cz-customizable": "^7.0.0",
     "git-cz": "^4.9.0",
     "standard-version": "^9.5.0"
+  },
+  "engines": {
+    "node": ">=18.0"
   }
 }
