@@ -5,12 +5,13 @@ import inquirer from 'inquirer';
 import util from 'util';
 import path from 'path';
 import chalk from 'chalk';
+//@ts-ignore
 import downloadGitRepo from 'download-git-repo';
 
 const downloadGitRepoPro = util.promisify(downloadGitRepo);
 
 // 添加加载动画
-async function wrapLoading(fn, message, ...args) {
+async function wrapLoading(fn: any, message: string, ...args: any) {
 	// 使用 ora 初始化，传入提示信息 message
 	const spinner = ora(message);
 	// 开始加载动画
@@ -24,10 +25,11 @@ async function wrapLoading(fn, message, ...args) {
 	} catch (error) {
 		// 状态为修改为失败
 		spinner.fail('请求失败，重新发起...');
+		return
 	}
 }
 
-async function getRepo(filter) {
+async function getRepo(filter: string) {
 	// 1）从远程拉取模板数据
 	const repoList = await wrapLoading(getRepoList, '等待获取模版');
 	if (!repoList) return;
@@ -35,7 +37,7 @@ async function getRepo(filter) {
 	// 约定俗称的模版前缀
 	// 组件库模版：template-components-*
 	// web中台模版：template-web-app-*
-	const repos = repoList.filter((item) => {
+	const repos = repoList.filter((item: any) => {
 		return item.name.indexOf(`${template_prefix}${filter}-`) !== -1;
 	});
 	if (!repos.length) {
@@ -61,12 +63,12 @@ async function getRepo(filter) {
 // 1）基于 repo 结果，远程拉取对应的 tag 列表
 // 2）用户选择自己需要下载的 tag
 // 3）return 用户选择的 tag
-async function getTag(repo) {
+async function getTag(repo: string) {
 	// 1）基于 repo 结果，远程拉取对应的 tag 列表
 	const tags = await wrapLoading(getTagList, '等待获取版本号', repo);
 	if (!tags) return;
 	// 过滤我们需要的 tag 名称
-	const tagsList = tags.map((item) => item.name);
+	const tagsList = tags.map((item: any) => item.name);
 	// 2）用户选择自己需要下载的 tag
 	const { tag } = await inquirer.prompt({
 		name: 'tag',
@@ -81,7 +83,7 @@ async function getTag(repo) {
 // 下载远程模板
 // 1）拼接下载地址
 // 2）调用下载方法
-async function download(repo, tag, targetDir) {
+async function download(repo: string, tag: string, targetDir: string) {
 	// 1）拼接下载地址
 	const requestUrl = `${template_offer.name}/${repo}${tag ? '#' + tag : ''}`;
 	// 2）调用下载方法
@@ -94,7 +96,10 @@ async function download(repo, tag, targetDir) {
 }
 
 export class Generator {
-	constructor(name, type, targetDir) {
+	name: string;
+	targetDir: string;
+	type: string;
+	constructor(name: string, type: string, targetDir: string) {
 		// 目录名称
 		this.name = name;
 		// 创建位置

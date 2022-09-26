@@ -4,7 +4,12 @@ import { template_list } from '../config/config.js';
 import inquirer from 'inquirer';
 import { Generator } from './generator.js';
 
-export default async function (name, options) {
+interface CreateOptions {
+	type: string,
+	force: boolean
+}
+
+export default async function (name: string, options: CreateOptions) {
 	let { type, force } = options;
 
 	// 当前命令行选择的目录

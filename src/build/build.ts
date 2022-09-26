@@ -4,6 +4,10 @@ import { template_list } from '../config/config.js';
 import inquirer from 'inquirer';
 import { Generator } from '../create/generator.js';
 
-export default async function (options) {
+interface BuildOptions {
+
+}
+
+export default async function (options: BuildOptions) {
 	console.log(options);
 }

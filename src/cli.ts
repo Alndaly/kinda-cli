@@ -42,7 +42,6 @@ program
 		new Option(
 			'-t --type <type>',
 			'choose the type of your application',
-			'web-app'
 		).choices(template_list.map((item) => item.value))
 	)
 	.action((name, options) => {

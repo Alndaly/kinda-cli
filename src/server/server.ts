@@ -6,6 +6,11 @@ import webpack from 'webpack';
 import logger from '../logger/index.js';
 import spawn from 'cross-spawn';
 
+interface ServerOptions {
+	port: number
+}
+
+
 function server() {
 	return new Promise((resolve, reject) => {
 		// Spawn NPM asynchronously
@@ -14,7 +19,7 @@ function server() {
 		const child = spawn(command, args, {
 			stdio: 'inherit',
 		});
-		child.on('close', (code) => {
+		child.on('close', (code: number) => {
 			console.log('code:', code);
 			if (code !== 0) {
 				reject({
@@ -27,7 +32,7 @@ function server() {
 	});
 }
 
-export default async function (options) {
+export default async function (options: ServerOptions) {
 	const { port } = options;
 	server();
 }
