@@ -1,17 +1,31 @@
 #! /usr/bin/env node
 
 import { program, Option } from 'commander';
-import create from './create.js';
-import server from './server.js';
-import build from './build.js';
-import packageInfo from '../package.json' assert { type: 'json' };
-import { template_list } from './config.js';
+import create from './create/create.js';
+import server from './server/server.js';
+import logger from './logger/index.js';
+import build from './build/build.js';
+import * as semver from 'semver';
+import { createRequire } from 'module';
+import { template_list } from './config/config.js';
+
+//@ts-ignore
+const packageJson = createRequire(import.meta.url)('../package.json');
+
+const requiredVersion = packageJson.engines.node;
+
+// 检验node版本
+if (!semver.satisfies(process.version, requiredVersion)) {
+	logger.error('Minimum Node.js version not met :(');
+	logger.info`You are using Node.js number=${process.version}, Requirement: Node.js number=${requiredVersion}.`;
+	process.exit(1);
+}
 
 program
 	.name('kinda-cli')
 	.description(`CLI to make developers' life easy.`)
 	// 配置版本号信息
-	.version(`v${packageInfo.version}`)
+	.version(`v${packageJson.version}`)
 	.usage('<command> [option]');
 
 // 项目创建命令
@@ -28,7 +42,6 @@ program
 		new Option(
 			'-t --type <type>',
 			'choose the type of your application',
-			'web-app'
 		).choices(template_list.map((item) => item.value))
 	)
 	.action((name, options) => {
