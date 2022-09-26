@@ -1,10 +1,10 @@
 import path from 'path';
 import fs from 'fs-extra';
-import { template_list } from '../config/config.js';
+import { template_list, structure_list } from '../config/config.js';
 import inquirer from 'inquirer';
 import { Generator } from './generator.js';
 export default async function (name, options) {
-    let { type, force } = options;
+    let { type, force, structure } = options;
     // 当前命令行选择的目录
     const cwd = process.cwd();
     // 需要创建的目录地址
@@ -56,8 +56,19 @@ export default async function (name, options) {
         ]);
         type = data.value;
     }
+    if (!structure) {
+        let data = await inquirer.prompt([
+            {
+                name: 'value',
+                type: 'list',
+                message: '打包框架',
+                choices: structure_list,
+            },
+        ]);
+        structure = data.value;
+    }
     // 创建项目
-    const generator = new Generator(name, type, targetAir);
+    const generator = new Generator(name, type, structure, targetAir);
     // 开始创建项目
     generator.create();
 }

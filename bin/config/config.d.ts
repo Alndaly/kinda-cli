@@ -8,3 +8,4 @@ export declare const template_list: {
     name: string;
     value: string;
 }[];
+export declare const structure_list: string[];

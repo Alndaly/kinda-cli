@@ -1,5 +1,7 @@
 {
   "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {},
     "outDir": "./bin",
     "target": "es2020",
     "lib": [
@@ -17,7 +19,6 @@
     "module": "NodeNext",
     // Avoid accidentally using this config to build
     "noEmit": false,
-
     /* Strict Type-Checking Options */
     "allowUnreachableCode": false,
     // Too hard to turn on
@@ -43,7 +44,6 @@
     "noUnusedLocals": false,
     "noUnusedParameters": false,
     "importsNotUsedAsValues": "remove",
-
     /* Module Resolution */
     "moduleResolution": "NodeNext",
     "resolveJsonModule": true,

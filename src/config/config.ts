@@ -19,3 +19,9 @@ export const template_list = [
 		value: 'web-app',
 	},
 ];
+
+
+export const structure_list = [
+	'vite',
+	'webpack'
+]
