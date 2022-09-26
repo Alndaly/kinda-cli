@@ -6,6 +6,7 @@
   "description": "kinda脚手架",
   "repository": "https://github.com/Alndaly/kinda-cli",
   "scripts": {
+    "build": "tsc",
     "test": "echo \"Error: no test specified\" && exit 1",
     "release": "standard-version",
     "push": "git push --follow-tags",

@@ -29,7 +29,7 @@ program
     .description('create program')
     // -f or --force 为强制创建，如果创建的目录存在则直接覆盖
     .addOption(new Option('-f, --force', 'overwrite target directory if it exist'))
-    .addOption(new Option('-t --type <type>', 'choose the type of your application', 'web-app').choices(template_list.map((item) => item.value)))
+    .addOption(new Option('-t --type <type>', 'choose the type of your application').choices(template_list.map((item) => item.value)))
     .action((name, options) => {
     create(name, options);
 });

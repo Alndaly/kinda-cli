@@ -28,7 +28,7 @@ function interpolate(msgs, ...values) {
                 case 'code=':
                     return code;
                 default:
-                    throw new Error('Bad Docusaurus logging message. This is likely an internal bug, please report it.');
+                    throw new Error('Bad Kinda logging message. This is likely an internal bug, please report it.');
             }
         })();
         res += Array.isArray(value)
@@ -45,19 +45,29 @@ function stringify(msg) {
     return String(msg);
 }
 function info(msg, ...values) {
-    console.info(`${chalk.cyan.bold('[INFO]')} ${values.length === 0 ? stringify(msg) : interpolate(msg, ...values)}`);
+    console.info(`${chalk.cyan.bold('[INFO]')} ${values.length === 0
+        ? stringify(msg)
+        : interpolate(msg, ...values)}`);
 }
 function warn(msg, ...values) {
-    console.warn(chalk.yellow(`${chalk.bold('[WARNING]')} ${values.length === 0 ? stringify(msg) : interpolate(msg, ...values)}`));
+    console.warn(chalk.yellow(`${chalk.bold('[WARNING]')} ${values.length === 0
+        ? stringify(msg)
+        : interpolate(msg, ...values)}`));
 }
 function error(msg, ...values) {
-    console.error(chalk.red(`${chalk.bold('[ERROR]')} ${values.length === 0 ? stringify(msg) : interpolate(msg, ...values)}`));
+    console.error(chalk.red(`${chalk.bold('[ERROR]')} ${values.length === 0
+        ? stringify(msg)
+        : interpolate(msg, ...values)}`));
 }
 function success(msg, ...values) {
-    console.log(`${chalk.green.bold('[SUCCESS]')} ${values.length === 0 ? stringify(msg) : interpolate(msg, ...values)}`);
+    console.log(`${chalk.green.bold('[SUCCESS]')} ${values.length === 0
+        ? stringify(msg)
+        : interpolate(msg, ...values)}`);
 }
 function throwError(msg, ...values) {
-    throw new Error(values.length === 0 ? stringify(msg) : interpolate(msg, ...values));
+    throw new Error(values.length === 0
+        ? stringify(msg)
+        : interpolate(msg, ...values));
 }
 function newLine() {
     console.log();

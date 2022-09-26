@@ -5,11 +5,11 @@ import create from './create/create.js';
 import server from './server/server.js';
 import logger from './logger/index.js';
 import build from './build/build.js';
-import semver from 'semver';
+import * as semver from 'semver';
 import { createRequire } from 'module';
-import path from 'path';
 import { template_list } from './config/config.js';
 
+//@ts-ignore
 const packageJson = createRequire(import.meta.url)('../package.json');
 
 const requiredVersion = packageJson.engines.node;

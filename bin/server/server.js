@@ -15,7 +15,7 @@ function server() {
                 });
                 return;
             }
-            resolve();
+            resolve(null);
         });
     });
 }

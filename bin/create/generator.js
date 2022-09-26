@@ -5,6 +5,7 @@ import inquirer from 'inquirer';
 import util from 'util';
 import path from 'path';
 import chalk from 'chalk';
+//@ts-ignore
 import downloadGitRepo from 'download-git-repo';
 const downloadGitRepoPro = util.promisify(downloadGitRepo);
 // 添加加载动画
@@ -23,6 +24,7 @@ async function wrapLoading(fn, message, ...args) {
     catch (error) {
         // 状态为修改为失败
         spinner.fail('请求失败，重新发起...');
+        return;
     }
 }
 async function getRepo(filter) {
