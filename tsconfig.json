@@ -23,6 +23,7 @@
     // Too hard to turn on
     "exactOptionalPropertyTypes": false,
     "noFallthroughCasesInSwitch": true,
+    "suppressImplicitAnyIndexErrors": true,
     "noImplicitOverride": true,
     "noImplicitReturns": true,
     // `process.env` is usually accessed as property

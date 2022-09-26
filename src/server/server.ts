@@ -2,7 +2,6 @@ import path from 'path';
 import fs from 'fs-extra';
 import inquirer from 'inquirer';
 import http from 'http';
-import path from 'path';
 import webpack from 'webpack';
 import logger from '../logger/index.js';
 import spawn from 'cross-spawn';
@@ -23,7 +22,7 @@ function server() {
 				});
 				return;
 			}
-			resolve();
+			resolve(null);
 		});
 	});
 }

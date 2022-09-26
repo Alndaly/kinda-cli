@@ -55,6 +55,7 @@
     "@commitlint/config-conventional": "^17.1.0",
     "commitlint-config-cz": "^0.13.3",
     "cz-customizable": "^7.0.0",
+    "eslint": "^8.24.0",
     "git-cz": "^4.9.0",
     "standard-version": "^9.5.0"
   },
