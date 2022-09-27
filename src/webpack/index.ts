@@ -1,8 +1,10 @@
+import { getDevServer } from './configure/devServer/index.js';
 import { getWebpackPlugins } from '../webpack/configure/plugins/index.js';
 import type { Configuration } from 'webpack';
 import path from 'path';
 import { dirname } from "node:path"
 import { fileURLToPath } from "node:url"
+import { getModuleConfig } from './configure/module/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -14,15 +16,15 @@ const defaultConfigure: Configuration = {
         filename: '[name].bundle.js',
         path: path.resolve(__dirname, 'dist'),
     },
-    devServer: {
-        port: 3000,
-    }
+    resolve: {
+        extensions: ['.tsx', '.ts', '.js'],
+    },
+    module: getModuleConfig(),
+    devServer: getDevServer(),
+    plugins: getWebpackPlugins()
 }
 
-export const getWebpackConfigure = () => {
-    let configure: Configuration = {}
-    configure = {
-        plugins: getWebpackPlugins()
-    }
-    return Object.assign(defaultConfigure, configure)
+export const getWebpackConfigure = (webpackConfig: Configuration) => {
+    // 配置文件优先级 webpackConfig > defaultConfigure
+    return Object.assign(defaultConfigure, webpackConfig)
 }

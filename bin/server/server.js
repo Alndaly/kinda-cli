@@ -1,9 +1,10 @@
+import { kindaConfig } from '../cli.js';
 import webpack from 'webpack';
 import { getWebpackConfigure } from '../webpack/index.js';
 import webpackDevServer from 'webpack-dev-server';
-const webpackConfigure = getWebpackConfigure();
+const webpackConfigure = getWebpackConfigure(kindaConfig.webpackConfiguration);
 const compiler = webpack(webpackConfigure);
-const devServerOptions = { ...(webpackConfigure.devServer), open: true };
+const devServerOptions = { ...(webpackConfigure.devServer) };
 const runServer = async (server) => {
     console.log('Starting server...');
     server.startCallback(() => {

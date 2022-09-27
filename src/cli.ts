@@ -24,11 +24,9 @@ if (!semver.satisfies(process.version, requiredVersion)) {
 	process.exit(1);
 }
 
-const kindaConfig = await getConfigFile(path.resolve())
+export const kindaConfig = await getConfigFile(path.resolve())
 
-if(!kindaConfig){
-	console.log(`${chalk.red('没有找到配置文件，使用默认配置。')}`)
-}
+console.log('基础配置:', kindaConfig)
 
 program
 	.name('kinda-cli')

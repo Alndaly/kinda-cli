@@ -1,2 +1,2 @@
 #! /usr/bin/env node
-export {};
+export declare const kindaConfig: import("./common/config/kinda.base.js").KindaConfiguration;

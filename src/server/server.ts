@@ -1,3 +1,4 @@
+import { kindaConfig } from '../cli.js';
 import { createRequire } from 'module';
 import path from 'path';
 import fs from 'fs-extra';
@@ -13,11 +14,11 @@ interface ServerOptions {
 	port: number
 }
 
-const webpackConfigure = getWebpackConfigure()
+const webpackConfigure = getWebpackConfigure(kindaConfig.webpackConfiguration)
 
 const compiler = webpack(webpackConfigure)
 
-const devServerOptions = { ...(webpackConfigure.devServer), open: true };
+const devServerOptions = { ...(webpackConfigure.devServer) };
 
 const runServer = async (server: any) => {
 	console.log('Starting server...');
