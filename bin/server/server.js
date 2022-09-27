@@ -1,21 +1,31 @@
-import spawn from 'cross-spawn';
+import { createRequire } from 'module';
+import child_process from 'child_process';
 function server() {
     return new Promise((resolve, reject) => {
-        // Spawn NPM asynchronously
-        const command = 'webpack';
-        const args = [''];
-        const child = spawn(command, args, {
-            stdio: 'inherit',
-        });
-        child.on('close', (code) => {
-            console.log('code:', code);
-            if (code !== 0) {
-                reject({
-                    command: `${command} ${args}`,
-                });
-                return;
+        const child = child_process.fork(createRequire(import.meta.url)('docusaurus'), process.argv.slice(2), {
+            stdio: 'inherit'
+        }); // for e2e test
+        child.on('message', (args) => {
+            if (process.send) {
+                process.send(args);
             }
-            resolve(null);
+        });
+        process.on('SIGINT', () => {
+            child.kill('SIGINT');
+        });
+        process.on('SIGTERM', () => {
+            child.kill('SIGTERM');
+        });
+        child.on('exit', (code, signal) => {
+            if (signal === 'SIGABRT') {
+                process.exit(1);
+            }
+            else if (code === null) {
+                // SIGKILL exit code is null
+                console.error(`umi is kill by ${signal}`);
+                process.exit(1);
+            }
+            process.exit(code || 0);
         });
     });
 }

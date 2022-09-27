@@ -6,7 +6,7 @@ import logger from './logger/index.js';
 import build from './build/build.js';
 import semver from 'semver';
 import { createRequire } from 'module';
-import { template_list, structure_list } from './config/config.js';
+import { template_list, structure_list } from './common/config/config.js';
 //@ts-ignore
 const packageJson = createRequire(import.meta.url)('../package.json');
 const requiredVersion = packageJson.engines.node;

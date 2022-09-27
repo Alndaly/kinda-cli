@@ -1,6 +1,6 @@
 import path from 'path';
 import fs from 'fs-extra';
-import { template_list, structure_list } from '../config/config.js';
+import { template_list, structure_list } from '../common/config/config.js';
 import inquirer from 'inquirer';
 import { Generator } from './generator.js';
 export default async function (name, options) {
