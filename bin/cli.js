@@ -7,6 +7,8 @@ import build from './build/build.js';
 import semver from 'semver';
 import { createRequire } from 'module';
 import { template_list, structure_list } from './common/config/config.js';
+import { getConfigFile } from './common/utils/configUtil.js';
+import path from 'path';
 //@ts-ignore
 const packageJson = createRequire(import.meta.url)('../package.json');
 const requiredVersion = packageJson.engines.node;
@@ -16,6 +18,8 @@ if (!semver.satisfies(process.version, requiredVersion)) {
     logger.info `You are using Node.js number=${process.version}, Requirement: Node.js number=${requiredVersion}.`;
     process.exit(1);
 }
+const kindaConfig = getConfigFile(path.resolve());
+// console.log('配置文件:', kindaConfig)
 program
     .name('kinda-cli')
     .description(`CLI to make developers' life easy.`)
