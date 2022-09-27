@@ -21,7 +21,7 @@
   "bin": {
     "kinda": "./bin/cli.js"
   },
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "@babel/core": "^7.19.1",
     "@docusaurus/core": "^2.1.0",
