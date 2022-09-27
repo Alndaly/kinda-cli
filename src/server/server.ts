@@ -1,32 +1,54 @@
-import { getWatchOptions, watchHandlers } from './../webpack/configure/watch/index.js';
 import { createRequire } from 'module';
 import path from 'path';
 import fs from 'fs-extra';
 import inquirer from 'inquirer';
 import http from 'http';
 import webpack from 'webpack';
-import anymatch from 'anymatch'
 import logger from '../logger/index.js';
 import { getWebpackConfigure } from '../webpack/index.js';
 import spawn from 'cross-spawn';
-import child_process from 'child_process'
+import webpackDevServer from 'webpack-dev-server';
 
 interface ServerOptions {
 	port: number
 }
 
-const compier = webpack(getWebpackConfigure())
+const webpackConfigure = getWebpackConfigure()
 
-function server() {
-	const watching = compier.watch(getWatchOptions(), watchHandlers)
+const compiler = webpack(webpackConfigure)
+
+const devServerOptions = { ...(webpackConfigure.devServer), open: true };
+
+const runServer = async (server: any) => {
+	console.log('Starting server...');
+	server.startCallback(() => {
+		const localIPv4 = webpackDevServer.internalIPSync('v4');
+		const localIPv6 = webpackDevServer.internalIPSync('v6');
+		//@ts-ignore
+		// console.log(`Successfully started server on http://localhost:${webpackConfigure.devServer.port}`);
+	});
 	process.on('SIGINT', () => {
-		watching.close(() => {
-			console.log("\nWebpack compier Watching Ended.");
-		});
+		stopServer(server)
 	});
 }
 
-export default async function (options: ServerOptions) {
+
+const stopServer = async (server: any) => {
+	console.log('\nStopping server...');
+	server.stopCallback(() => {
+		console.log('Server stopped.');
+	});
+};
+
+const getFinalOptions = (options: ServerOptions) => {
 	const { port } = options;
-	server();
+	if (port) {
+		return { ...devServerOptions, ...options }
+	}
+	return devServerOptions
+}
+
+export default async function (options: ServerOptions) {
+	const server = new webpackDevServer(getFinalOptions(options), compiler);
+	runServer(server);
 }
