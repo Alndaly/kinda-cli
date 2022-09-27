@@ -4,6 +4,7 @@ import create from './create/create.js';
 import server from './server/server.js';
 import logger from './logger/index.js';
 import build from './build/build.js';
+import chalk from 'chalk';
 import semver from 'semver';
 import { createRequire } from 'module';
 import { template_list, structure_list } from './common/config/config.js';
@@ -19,7 +20,9 @@ if (!semver.satisfies(process.version, requiredVersion)) {
     process.exit(1);
 }
 const kindaConfig = getConfigFile(path.resolve());
-// console.log('配置文件:', kindaConfig)
+if (!kindaConfig) {
+    console.log(`${chalk.red('没有找到配置文件，使用默认配置。')}`);
+}
 program
     .name('kinda-cli')
     .description(`CLI to make developers' life easy.`)
