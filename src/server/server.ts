@@ -1,33 +1,27 @@
+import { getWatchOptions, watchHandlers } from './../webpack/configure/watch/index.js';
+import { createRequire } from 'module';
 import path from 'path';
 import fs from 'fs-extra';
 import inquirer from 'inquirer';
 import http from 'http';
 import webpack from 'webpack';
+import anymatch from 'anymatch'
 import logger from '../logger/index.js';
+import { getWebpackConfigure } from '../webpack/index.js';
 import spawn from 'cross-spawn';
+import child_process from 'child_process'
 
 interface ServerOptions {
 	port: number
 }
 
+const compier = webpack(getWebpackConfigure())
 
 function server() {
-	return new Promise((resolve, reject) => {
-		// Spawn NPM asynchronously
-		const command = 'webpack';
-		const args = [''];
-		const child = spawn(command, args, {
-			stdio: 'inherit',
-		});
-		child.on('close', (code: number) => {
-			console.log('code:', code);
-			if (code !== 0) {
-				reject({
-					command: `${command} ${args}`,
-				});
-				return;
-			}
-			resolve(null);
+	const watching = compier.watch(getWatchOptions(), watchHandlers)
+	process.on('SIGINT', () => {
+		watching.close(() => {
+			console.log("\nWebpack compier Watching Ended.");
 		});
 	});
 }

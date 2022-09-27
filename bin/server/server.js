@@ -1,21 +1,12 @@
-import spawn from 'cross-spawn';
+import { getWatchOptions, watchHandlers } from './../webpack/configure/watch/index.js';
+import webpack from 'webpack';
+import { getWebpackConfigure } from '../webpack/index.js';
+const compier = webpack(getWebpackConfigure());
 function server() {
-    return new Promise((resolve, reject) => {
-        // Spawn NPM asynchronously
-        const command = 'webpack';
-        const args = [''];
-        const child = spawn(command, args, {
-            stdio: 'inherit',
-        });
-        child.on('close', (code) => {
-            console.log('code:', code);
-            if (code !== 0) {
-                reject({
-                    command: `${command} ${args}`,
-                });
-                return;
-            }
-            resolve(null);
+    const watching = compier.watch(getWatchOptions(), watchHandlers);
+    process.on('SIGINT', () => {
+        watching.close(() => {
+            console.log("\nWebpack compier Watching Ended.");
         });
     });
 }

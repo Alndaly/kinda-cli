@@ -4,9 +4,9 @@ import create from './create/create.js';
 import server from './server/server.js';
 import logger from './logger/index.js';
 import build from './build/build.js';
-import * as semver from 'semver';
+import semver from 'semver';
 import { createRequire } from 'module';
-import { template_list } from './config/config.js';
+import { template_list, structure_list } from './common/config/config.js';
 //@ts-ignore
 const packageJson = createRequire(import.meta.url)('../package.json');
 const requiredVersion = packageJson.engines.node;
@@ -30,6 +30,7 @@ program
     .description('create program')
     // -f or --force 为强制创建，如果创建的目录存在则直接覆盖
     .addOption(new Option('-f, --force', 'overwrite target directory if it exist'))
+    .addOption(new Option('-s, --structure <structure>', 'choose the base structure of your project').choices(structure_list))
     .addOption(new Option('-t --type <type>', 'choose the type of your application').choices(template_list.map((item) => item.value)))
     .action((name, options) => {
     create(name, options);

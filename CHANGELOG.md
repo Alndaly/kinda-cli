@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.9](https://github.com/Alndaly/kinda-cli/compare/v0.0.8...v0.0.9) (2022-09-27)
+
+
+### Features
+
+* 增加webpack配置 ([1036398](https://github.com/Alndaly/kinda-cli/commit/1036398903f8c8d39eba73b1218aa63ce73e3648))
+
+
+### Bug Fixes
+
+* 🐛 修复ts报错 ([0e7a9ac](https://github.com/Alndaly/kinda-cli/commit/0e7a9ac2d383d1e72d88cb70d79d07dbc12006ea))
+
 ### [0.0.8](https://github.com/Alndaly/kinda-cli/compare/v0.0.7...v0.0.8) (2022-09-25)
 
 
