@@ -74,6 +74,9 @@ program
 	.command('build')
 	// init命令介绍
 	.description('build optimized project')
+	.addOption(
+		new Option('-w --watch', 'keep watching file changes, rebuild when file changes')
+	)
 	.action((options) => {
 		build(options);
 	});

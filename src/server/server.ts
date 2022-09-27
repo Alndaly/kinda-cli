@@ -9,16 +9,17 @@ import anymatch from 'anymatch'
 import logger from '../logger/index.js';
 import { getWebpackConfigure } from '../webpack/index.js';
 import spawn from 'cross-spawn';
+import webpackDevServer from 'webpack-dev-server';
 import child_process from 'child_process'
 
 interface ServerOptions {
 	port: number
 }
 
-const compier = webpack(getWebpackConfigure())
+const compiler = webpack(getWebpackConfigure())
 
 function server() {
-	const watching = compier.watch(getWatchOptions(), watchHandlers)
+	const watching = compiler.watch(getWatchOptions(), watchHandlers)
 	process.on('SIGINT', () => {
 		watching.close(() => {
 			console.log("\nWebpack compier Watching Ended.");
