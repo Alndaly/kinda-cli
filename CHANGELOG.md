@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.10](https://github.com/Alndaly/kinda-cli/compare/v0.0.9...v0.0.10) (2022-09-27)
+
+
+### Features
+
+* 🎸 增加build命令 ([0366b59](https://github.com/Alndaly/kinda-cli/commit/0366b59ffa3677b149f6a6b0264b139048bc8152))
+
 ### [0.0.9](https://github.com/Alndaly/kinda-cli/compare/v0.0.8...v0.0.9) (2022-09-27)
 
 
