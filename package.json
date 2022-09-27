@@ -25,6 +25,7 @@
   "dependencies": {
     "@babel/core": "^7.19.1",
     "@docusaurus/core": "^2.1.0",
+    "anymatch": "^3.1.2",
     "axios": "^0.27.2",
     "chalk": "^5.0.1",
     "child_process": "^1.0.2",
@@ -51,7 +52,8 @@
     "util": "^0.12.4",
     "webpack": "^5.74.0",
     "webpack-dev-server": "^4.11.1",
-    "webpack-merge": "^5.8.0"
+    "webpack-merge": "^5.8.0",
+    "webpackbar": "^5.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
@@ -62,6 +64,7 @@
     "@types/inquirer": "^9.0.1",
     "@types/lodash": "^4.14.185",
     "@types/semver": "^7.3.12",
+    "@types/webpackbar": "^4.0.3",
     "commitlint-config-cz": "^0.13.3",
     "cz-customizable": "^7.0.0",
     "eslint": "^8.24.0",
