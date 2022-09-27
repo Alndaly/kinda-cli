@@ -1,4 +1,4 @@
-import { KindaConfiguration } from '../config/kinda.base.js';
-declare type Configuration = (root: string) => Promise<KindaConfiguration>;
+import { KindaConfiguration } from '../../types/index.js';
+type Configuration = (root: string) => Promise<KindaConfiguration>;
 export declare const getConfigFile: Configuration;
 export {};

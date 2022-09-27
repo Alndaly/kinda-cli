@@ -3,12 +3,7 @@ import fs from 'fs-extra';
 import { template_list, structure_list } from '../common/config/config.js';
 import inquirer from 'inquirer';
 import { Generator } from './generator.js';
-
-interface CreateOptions {
-	type: string,
-	force: boolean,
-	structure: string
-}
+import { CreateOptions } from '../types/index.js'
 
 export default async function (name: string, options: CreateOptions) {
 	let { type, force, structure } = options;

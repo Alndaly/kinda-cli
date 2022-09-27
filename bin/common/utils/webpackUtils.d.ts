@@ -5,8 +5,8 @@
  * LICENSE file in the root directory of this source tree.
  */
 import type { RuleSetRule } from 'webpack';
-declare type AssetFolder = 'images' | 'files' | 'fonts' | 'medias';
-declare type FileLoaderUtils = {
+type AssetFolder = 'images' | 'files' | 'fonts' | 'medias';
+type FileLoaderUtils = {
     loaders: {
         file: (options: {
             folder: AssetFolder;

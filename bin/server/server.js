@@ -1,8 +1,10 @@
-import { kindaConfig } from '../cli.js';
+import path from 'path';
 import webpack from 'webpack';
 import { getWebpackConfigure } from '../webpack/index.js';
 import webpackDevServer from 'webpack-dev-server';
-const webpackConfigure = getWebpackConfigure(kindaConfig.webpackConfiguration);
+import { getConfigFile } from '../common/utils/configUtil.js';
+const kindaConfig = await getConfigFile(path.resolve());
+const webpackConfigure = getWebpackConfigure(kindaConfig.webpackConfiguration, 'development');
 const compiler = webpack(webpackConfigure);
 const devServerOptions = { ...(webpackConfigure.devServer) };
 const runServer = async (server) => {

@@ -1,4 +1,3 @@
-import { kindaConfig } from '../cli.js';
 import { createRequire } from 'module';
 import path from 'path';
 import fs from 'fs-extra';
@@ -6,15 +5,14 @@ import inquirer from 'inquirer';
 import http from 'http';
 import webpack from 'webpack';
 import logger from '../logger/index.js';
+import { ServerOptions } from '../types/index.js'
 import { getWebpackConfigure } from '../webpack/index.js';
 import spawn from 'cross-spawn';
 import webpackDevServer from 'webpack-dev-server';
+import { getConfigFile } from '../common/utils/configUtil.js';
+const kindaConfig = await getConfigFile(path.resolve());
 
-interface ServerOptions {
-	port: number
-}
-
-const webpackConfigure = getWebpackConfigure(kindaConfig.webpackConfiguration)
+const webpackConfigure = getWebpackConfigure(kindaConfig.webpackConfiguration, 'development')
 
 const compiler = webpack(webpackConfigure)
 

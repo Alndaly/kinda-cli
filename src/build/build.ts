@@ -1,13 +1,12 @@
 import { getWatchOptions, watchHandlers } from './../webpack/configure/watch/index.js';
 import webpack from 'webpack';
 import { getWebpackConfigure } from '../webpack/index.js';
-import { kindaConfig } from '../cli.js';
+import { BuildOptions } from '../types/index.js'
+import path from 'path'
+import { getConfigFile } from '../common/utils/configUtil.js';
+const kindaConfig = await getConfigFile(path.resolve());
 
-const webpackConfigure = getWebpackConfigure(kindaConfig.webpackConfiguration)
-
-interface BuildOptions {
-	watch: boolean;
-}
+const webpackConfigure = getWebpackConfigure(kindaConfig.webpackConfiguration, 'production')
 
 const compiler = webpack(webpackConfigure)
 

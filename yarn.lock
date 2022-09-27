@@ -7631,18 +7631,9 @@ postcss-discard-unused@^5.1.0:
   dependencies:
     postcss-selector-parser "^6.0.5"
 
-postcss-loader@^7.0.0:
+postcss-loader@^7.0.0, postcss-loader@^7.0.1:
   version "7.0.1"
   resolved "https://registry.npmjs.org/postcss-loader/-/postcss-loader-7.0.1.tgz"
-  integrity sha512-VRviFEyYlLjctSM93gAZtcJJ/iSkPZ79zWbN/1fSH+NisBByEiVLqpdVDrPLVSi8DX0oJo12kL/GppTBdKVXiQ==
-  dependencies:
-    cosmiconfig "^7.0.0"
-    klona "^2.0.5"
-    semver "^7.3.7"
-
-postcss-loader@^7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/postcss-loader/-/postcss-loader-7.0.1.tgz#4c883cc0a1b2bfe2074377b7a74c1cd805684395"
   integrity sha512-VRviFEyYlLjctSM93gAZtcJJ/iSkPZ79zWbN/1fSH+NisBByEiVLqpdVDrPLVSi8DX0oJo12kL/GppTBdKVXiQ==
   dependencies:
     cosmiconfig "^7.0.0"
@@ -9756,10 +9747,15 @@ typedarray@^0.0.6, typedarray@~0.0.5:
   resolved "https://registry.npmjs.org/typedarray/-/typedarray-0.0.6.tgz"
   integrity sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==
 
-typescript@^4.6.4, typescript@^4.8.3:
+typescript@^4.6.4:
   version "4.8.3"
   resolved "https://registry.npmjs.org/typescript/-/typescript-4.8.3.tgz"
   integrity sha512-goMHfm00nWPa8UvR/CPSvykqf6dVV8x/dp0c5mFTMTIu0u0FlGWRioyy7Nn0PGAdHxpJZnuO/ut+PpQ8UiHAig==
+
+typescript@^4.9.0-dev.20220927:
+  version "4.9.0-dev.20220927"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.0-dev.20220927.tgz#f29f6fa5e4ac37cc8ec386604f097459cd0906bc"
+  integrity sha512-MXTYXCsE60y6eXtLu2aAgeV0LD/e5HCBPPRETcH+UMPoVusk9RjJNzj1/9gkNRryIoqeeL3w2AlxYHbiHPtQog==
 
 uglify-js@^3.1.4:
   version "3.17.1"

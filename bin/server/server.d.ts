@@ -1,5 +1,2 @@
-interface ServerOptions {
-    port: number;
-}
+import { ServerOptions } from '../types/index.js';
 export default function (options: ServerOptions): Promise<void>;
-export {};

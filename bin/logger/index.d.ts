@@ -1,5 +1,5 @@
-declare type ReportingSeverity = 'ignore' | 'log' | 'warn' | 'throw';
-declare type InterpolatableValue = string | number | (string | number)[];
+type ReportingSeverity = 'ignore' | 'log' | 'warn' | 'throw';
+type InterpolatableValue = string | number | (string | number)[];
 declare function interpolate(msgs: TemplateStringsArray, ...values: InterpolatableValue[]): string;
 declare function info(msg: unknown): void;
 declare function info(msg: TemplateStringsArray, ...values: [InterpolatableValue, ...InterpolatableValue[]]): void;

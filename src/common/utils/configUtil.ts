@@ -1,4 +1,4 @@
-import { KindaConfiguration } from '../config/kinda.base.js';
+import { KindaConfiguration } from '../../types/index.js';
 import path from 'path'
 import chalk from 'chalk';
 import fs from 'fs-extra'

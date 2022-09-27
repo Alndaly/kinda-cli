@@ -1,9 +1,4 @@
-import type { Configuration } from 'webpack';
-
-export interface KindaConfiguration {
-    structure: 'vite' | 'webpack',
-    webpackConfiguration: Configuration
-}
+import { KindaConfiguration } from '../../types/index.js'
 
 export const getDefaultKindaConfig = () => {
     const defaultConfiguration: KindaConfiguration = {
