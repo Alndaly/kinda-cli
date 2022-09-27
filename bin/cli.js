@@ -19,7 +19,7 @@ if (!semver.satisfies(process.version, requiredVersion)) {
     logger.info `You are using Node.js number=${process.version}, Requirement: Node.js number=${requiredVersion}.`;
     process.exit(1);
 }
-const kindaConfig = getConfigFile(path.resolve());
+const kindaConfig = await getConfigFile(path.resolve());
 if (!kindaConfig) {
     console.log(`${chalk.red('没有找到配置文件，使用默认配置。')}`);
 }

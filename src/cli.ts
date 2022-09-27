@@ -24,7 +24,7 @@ if (!semver.satisfies(process.version, requiredVersion)) {
 	process.exit(1);
 }
 
-const kindaConfig = getConfigFile(path.resolve())
+const kindaConfig = await getConfigFile(path.resolve())
 
 if(!kindaConfig){
 	console.log(`${chalk.red('没有找到配置文件，使用默认配置。')}`)
