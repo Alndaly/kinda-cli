@@ -1,6 +1,6 @@
 {
   "name": "kinda-cli",
-  "version": "0.0.8",
+  "version": "0.0.9",
   "author": "alnda",
   "type": "module",
   "description": "kinda脚手架",
