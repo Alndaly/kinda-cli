@@ -1,5 +1,5 @@
 {
-  "name": "kinda-cli",
+  "name": "@kinda/cli",
   "version": "0.0.12",
   "author": "alnda",
   "type": "module",
