@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.17](https://github.com/Alndaly/kinda-cli/compare/v0.0.16...v0.0.17) (2022-09-27)
+
+
+### Bug Fixes
+
+* 🐛 修改配置文件名 ([6472c1e](https://github.com/Alndaly/kinda-cli/commit/6472c1e58bc8314be8c4c8c690e4101504b6d56b))
+
 ### [0.0.16](https://github.com/Alndaly/kinda-cli/compare/v0.0.15...v0.0.16) (2022-09-27)
 
 ### [0.0.15](https://github.com/Alndaly/kinda-cli/compare/v0.0.14...v0.0.15) (2022-09-27)
