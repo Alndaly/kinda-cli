@@ -11,7 +11,7 @@ export const getConfigFile: Configuration = async (root: string) => {
         let configInfo = await import(path.resolve(root, './kinda.config.js'));
         return configInfo;
     } else {
-        console.log(`${chalk.red('没有找到配置文件，使用默认配置。')}`)
+        // console.log(`${chalk.red('没有找到配置文件，使用默认配置。')}`)
         const defaultKindaConfig = getDefaultKindaConfig()
         return defaultKindaConfig;
     }

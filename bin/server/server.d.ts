@@ -1,2 +1,3 @@
 import { ServerOptions } from '../types/index.js';
-export default function (options: ServerOptions): Promise<void>;
+declare const _default: (options: ServerOptions) => void;
+export default _default;

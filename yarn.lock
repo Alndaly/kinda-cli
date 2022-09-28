@@ -2539,7 +2539,7 @@ axios@^0.27.2:
 
 babel-loader@^8.2.5:
   version "8.2.5"
-  resolved "https://registry.yarnpkg.com/babel-loader/-/babel-loader-8.2.5.tgz#d45f585e654d5a5d90f5350a779d7647c5ed512e"
+  resolved "https://registry.npmjs.org/babel-loader/-/babel-loader-8.2.5.tgz"
   integrity sha512-OSiFfH89LrEMiWd4pLNqGz4CwJDtbs2ZVc+iGu2HrkRfPxId9F2anQj38IxWpmRfsUY0aBZYi1EFcd3mhtRMLQ==
   dependencies:
     find-cache-dir "^3.3.1"
@@ -3594,7 +3594,7 @@ css-declaration-sorter@^6.3.0:
 
 css-loader@^6.7.1:
   version "6.7.1"
-  resolved "https://registry.yarnpkg.com/css-loader/-/css-loader-6.7.1.tgz#e98106f154f6e1baf3fc3bc455cb9981c1d5fd2e"
+  resolved "https://registry.npmjs.org/css-loader/-/css-loader-6.7.1.tgz"
   integrity sha512-yB5CNFa14MbPJcomwNh3wLThtkZgcNyI2bNMRt8iE5Z8Vwl7f8vQXFAzn2HDOJvtDq2NTZBUGMSUNNyrv3/+cw==
   dependencies:
     icss-utils "^5.1.0"
@@ -6413,7 +6413,7 @@ json-buffer@3.0.0:
 
 json-loader@^0.5.7:
   version "0.5.7"
-  resolved "https://registry.yarnpkg.com/json-loader/-/json-loader-0.5.7.tgz#dca14a70235ff82f0ac9a3abeb60d337a365185d"
+  resolved "https://registry.npmjs.org/json-loader/-/json-loader-0.5.7.tgz"
   integrity sha512-QLPs8Dj7lnf3e3QYS1zkCo+4ZwqOiF9d/nZnYozTISxXWCfNs9yuky5rJw4/W34s7POaNlbZmQGaB5NiXCbP4w==
 
 json-parse-better-errors@^1.0.1:
@@ -6529,7 +6529,7 @@ lcid@^1.0.0:
 
 less-loader@^11.0.0:
   version "11.0.0"
-  resolved "https://registry.yarnpkg.com/less-loader/-/less-loader-11.0.0.tgz#a31b2bc5cdfb62f1c7de9b2d01cd944c22b1a024"
+  resolved "https://registry.npmjs.org/less-loader/-/less-loader-11.0.0.tgz"
   integrity sha512-9+LOWWjuoectIEx3zrfN83NAGxSUB5pWEabbbidVQVgZhN+wN68pOvuyirVlH1IK4VT1f3TmlyvAnCXh8O5KEw==
   dependencies:
     klona "^2.0.4"
@@ -8187,7 +8187,7 @@ raw-body@2.5.1:
 
 raw-loader@^4.0.2:
   version "4.0.2"
-  resolved "https://registry.yarnpkg.com/raw-loader/-/raw-loader-4.0.2.tgz#1aac6b7d1ad1501e66efdac1522c73e59a584eb6"
+  resolved "https://registry.npmjs.org/raw-loader/-/raw-loader-4.0.2.tgz"
   integrity sha512-ZnScIV3ag9A4wPX/ZayxL/jZH+euYb6FcUinPcgiQW0+UBtEv0O6Q3lGd3cqJ+GHH+rksEv3Pj99oxJ3u3VIKA==
   dependencies:
     loader-utils "^2.0.0"
@@ -8864,7 +8864,7 @@ safe-regex-test@^1.0.0:
 
 sass-loader@^13.0.2:
   version "13.0.2"
-  resolved "https://registry.yarnpkg.com/sass-loader/-/sass-loader-13.0.2.tgz#e81a909048e06520e9f2ff25113a801065adb3fe"
+  resolved "https://registry.npmjs.org/sass-loader/-/sass-loader-13.0.2.tgz"
   integrity sha512-BbiqbVmbfJaWVeOOAu2o7DhYWtcNmTfvroVgFXa6k2hHheMxNAeDHLNoDy/Q5aoaVlz0LH+MbMktKwm9vN/j8Q==
   dependencies:
     klona "^2.0.4"
@@ -9511,7 +9511,7 @@ strip-outer@^1.0.0:
 
 style-loader@^3.3.1:
   version "3.3.1"
-  resolved "https://registry.yarnpkg.com/style-loader/-/style-loader-3.3.1.tgz#057dfa6b3d4d7c7064462830f9113ed417d38575"
+  resolved "https://registry.npmjs.org/style-loader/-/style-loader-3.3.1.tgz"
   integrity sha512-GPcQ+LDJbrcxHORTRes6Jy2sfvK2kS6hpSfI/fXhPt+spVzxF6LJ1dHLN9zIGmVaaP044YKaIatFaufENRiDoQ==
 
 style-to-object@0.3.0, style-to-object@^0.3.0:
@@ -9893,13 +9893,13 @@ typedarray@^0.0.6, typedarray@~0.0.5:
   integrity sha512-/aCDEGatGvZ2BIk+HmLf4ifCJFwvKFNb9/JeZPMulfgFracn9QFcAf5GO8B/mweUjSoblS5In0cWhqpfs/5PQA==
 
 typescript@^4.6.4:
-  version "4.8.3"
-  resolved "https://registry.npmjs.org/typescript/-/typescript-4.8.3.tgz"
-  integrity sha512-goMHfm00nWPa8UvR/CPSvykqf6dVV8x/dp0c5mFTMTIu0u0FlGWRioyy7Nn0PGAdHxpJZnuO/ut+PpQ8UiHAig==
+  version "4.8.4"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-4.8.4.tgz"
+  integrity sha512-QCh+85mCy+h0IGff8r5XWzOVSbBO+KfeYrMQh7NJ58QujwcE22u+NUSmUxqF+un70P9GXKxa2HCNiTTMJknyjQ==
 
 typescript@^4.9.0-dev.20220927:
   version "4.9.0-dev.20220927"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-4.9.0-dev.20220927.tgz#f29f6fa5e4ac37cc8ec386604f097459cd0906bc"
+  resolved "https://registry.npmjs.org/typescript/-/typescript-4.9.0-dev.20220927.tgz"
   integrity sha512-MXTYXCsE60y6eXtLu2aAgeV0LD/e5HCBPPRETcH+UMPoVusk9RjJNzj1/9gkNRryIoqeeL3w2AlxYHbiHPtQog==
 
 uglify-js@^3.1.4:

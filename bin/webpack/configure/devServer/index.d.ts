@@ -1,4 +1,1 @@
-export declare const getDevServer: () => {
-    port: number;
-    open: boolean;
-};
+export declare const getDevServer: () => import("webpack-dev-server").Configuration;
