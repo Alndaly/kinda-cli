@@ -32,7 +32,7 @@ const getFinalOptions = (options) => {
     }
     return devServerOptions;
 };
-export default async function (options) {
+export default (options) => {
     const server = new webpackDevServer(getFinalOptions(options), compiler);
     runServer(server);
-}
+};
