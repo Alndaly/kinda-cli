@@ -1,4 +1,6 @@
 import type { ModuleOptions } from 'webpack';
+import { createRequire } from 'module';
+
 
 export const getModuleConfig = () => {
     const module: ModuleOptions = {
@@ -19,18 +21,8 @@ export const getModuleConfig = () => {
             },
             {
                 test: /\.tsx?$/,
-                use: 'ts-loader',
+                use: createRequire(import.meta.url)('ts-loader'),
                 exclude: /node_modules/,
-            },
-            {
-                test: /\.less$/i,
-                use: [
-                    // compiles Less to CSS
-                    'style-loader',
-                    'css-loader',
-                    'postcss-loader',
-                    'less-loader',
-                ],
             },
         ]
     };
