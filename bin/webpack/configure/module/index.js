@@ -1,4 +1,6 @@
-import { createRequire } from 'module';
+import { fileURLToPath } from 'url';
+import path from 'path';
+const __dirname = fileURLToPath(new URL('.', import.meta.url));
 export const getModuleConfig = () => {
     const module = {
         rules: [
@@ -18,7 +20,7 @@ export const getModuleConfig = () => {
             },
             {
                 test: /\.tsx?$/,
-                use: createRequire(import.meta.url)('ts-loader'),
+                use: path.resolve(__dirname, '../../../../node_modules/ts-loader/dist/index.js'),
                 exclude: /node_modules/,
             },
         ]
