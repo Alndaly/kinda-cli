@@ -37,7 +37,7 @@ program
     .addOption(new Option('-s, --structure <structure>', 'choose the base structure of your project').choices(structure_list))
     .addOption(new Option('-t --type <type>', 'choose the type of your application').choices(template_list.map((item) => item.value)))
     .action((name, options) => {
-    create(name, options);
+    create(name, options, kindaConfig);
 });
 // 本地开启服务命令
 // TODO 待完善
@@ -48,7 +48,7 @@ program
     .description('local server port')
     .addOption(new Option('-p --port <port>', 'choose the port of your local server'))
     .action((options) => {
-    server(options);
+    server(options, kindaConfig);
 });
 // 打包命令
 // TODO 待完善
@@ -59,6 +59,6 @@ program
     .description('build optimized project')
     .addOption(new Option('-w --watch', 'keep watching file changes, rebuild when file changes'))
     .action((options) => {
-    build(options);
+    build(options, kindaConfig);
 });
 program.parse(process.argv);

@@ -3,7 +3,7 @@ import fs from 'fs-extra';
 import { template_list, structure_list } from '../common/config/config.js';
 import inquirer from 'inquirer';
 import { Generator } from './generator.js';
-export default async function (name, options) {
+export default async function (name, options, kindaConfig) {
     let { type, force, structure } = options;
     // 当前命令行选择的目录
     const cwd = process.cwd();

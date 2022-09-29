@@ -56,7 +56,7 @@ program
 		).choices(template_list.map((item) => item.value))
 	)
 	.action((name, options) => {
-		create(name, options);
+		create(name, options, kindaConfig);
 	});
 
 // 本地开启服务命令
@@ -70,7 +70,7 @@ program
 		new Option('-p --port <port>', 'choose the port of your local server')
 	)
 	.action((options) => {
-		server(options);
+		server(options, kindaConfig);
 	});
 
 // 打包命令
@@ -84,7 +84,7 @@ program
 		new Option('-w --watch', 'keep watching file changes, rebuild when file changes')
 	)
 	.action((options) => {
-		build(options);
+		build(options, kindaConfig);
 	});
 
 program.parse(process.argv);
