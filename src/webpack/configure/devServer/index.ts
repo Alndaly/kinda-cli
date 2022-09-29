@@ -4,7 +4,7 @@ import type { Configuration } from 'webpack';
 export const getDevServer = () => {
     const devServer: Configuration["devServer"] = {
         port: 3001, // 服务启动端口号
-        open: true, // 是否自动开启默认浏览器
+        open: false, // 是否自动开启默认浏览器
         hot: true, // 是否开启HMR
         host: 'local-ip', // 指定要使用的 host。如果你想让你的服务器可以被外部访问
         watchFiles: ['src/**/*', 'public/**/*'], // 该配置项允许你配置 globs/directories/files 来监听文件变化。

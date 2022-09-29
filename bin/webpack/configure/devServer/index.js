@@ -2,7 +2,7 @@ import path from 'path';
 export const getDevServer = () => {
     const devServer = {
         port: 3001,
-        open: true,
+        open: false,
         hot: true,
         host: 'local-ip',
         watchFiles: ['src/**/*', 'public/**/*'],

@@ -1,8 +1,6 @@
 export const getModuleConfig = () => {
     const module = {
         rules: [
-            { test: /\.txt$/, use: 'raw-loader' },
-            { test: /\.css$/, use: ['style-loader', 'css-loader', 'postcss-loader'] },
             { test: /\.json$/, use: 'json-loader' },
             {
                 test: /\.s[ac]ss$/i,
@@ -16,10 +14,6 @@ export const getModuleConfig = () => {
                     // 将 Sass 编译成 CSS
                     'sass-loader',
                 ],
-            },
-            {
-                test: /\.jsx$/,
-                use: ['babel-loader'],
             },
             {
                 test: /\.tsx?$/,
