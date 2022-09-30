@@ -22,7 +22,7 @@ export const getModuleConfig = () => {
                 ],
             },
             {
-                test: /\.tsx?$/,
+                test: /\.[jt]sx?$/i,
                 // use: path.resolve(__dirname, '../../../../node_modules/ts-loader/dist/index.js'),
                 use: path.resolve(__dirname, '../../../../node_modules/babel-loader/lib/index.js'),
                 exclude: /node_modules/,
