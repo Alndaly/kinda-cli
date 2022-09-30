@@ -2,6 +2,13 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.21](https://github.com/Alndaly/kinda-cli/compare/v0.0.20...v0.0.21) (2022-09-30)
+
+
+### Bug Fixes
+
+* 🐛 修复打包路径错误 ([8a81ba8](https://github.com/Alndaly/kinda-cli/commit/8a81ba89523d853d9be1d37d06ca9cd144195969))
+
 ### [0.0.20](https://github.com/Alndaly/kinda-cli/compare/v0.0.19...v0.0.20) (2022-09-30)
 
 ### [0.0.19](https://github.com/Alndaly/kinda-cli/compare/v0.0.18...v0.0.19) (2022-09-29)

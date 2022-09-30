@@ -8,7 +8,6 @@ import { fileURLToPath } from "node:url"
 import { getModuleConfig } from './configure/module/index.js';
 
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 
 const getDefaultConfigure = (environment: Environement) => {
     const defaultConfigure: Configuration = {
@@ -16,7 +15,7 @@ const getDefaultConfigure = (environment: Environement) => {
         devtool: 'inline-source-map',
         output: {
             filename: '[name].bundle.js',
-            path: path.resolve(__dirname, 'dist'),
+            path: path.resolve('dist'),
         },
         resolve: {
             extensions: ['.tsx', '.ts', '.js'],
