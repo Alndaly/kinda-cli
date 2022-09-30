@@ -7,6 +7,9 @@ import build from './build/build.js';
 import semver from 'semver';
 import { createRequire } from 'module';
 import { template_list, structure_list } from './common/config/config.js';
+import { getConfigFile } from './common/utils/configUtil.js';
+const kindaConfig = await getConfigFile(path.resolve());
+import path from 'path';
 //@ts-ignore
 const packageJson = createRequire(import.meta.url)('../package.json');
 const requiredVersion = packageJson.engines.node;
@@ -16,6 +19,7 @@ if (!semver.satisfies(process.version, requiredVersion)) {
     logger.info `You are using Node.js number=${process.version}, Requirement: Node.js number=${requiredVersion}.`;
     process.exit(1);
 }
+console.log('基础配置:', kindaConfig);
 program
     .name('kinda-cli')
     .description(`CLI to make developers' life easy.`)
@@ -33,7 +37,7 @@ program
     .addOption(new Option('-s, --structure <structure>', 'choose the base structure of your project').choices(structure_list))
     .addOption(new Option('-t --type <type>', 'choose the type of your application').choices(template_list.map((item) => item.value)))
     .action((name, options) => {
-    create(name, options);
+    create(name, options, kindaConfig);
 });
 // 本地开启服务命令
 // TODO 待完善
@@ -44,7 +48,7 @@ program
     .description('local server port')
     .addOption(new Option('-p --port <port>', 'choose the port of your local server'))
     .action((options) => {
-    server(options);
+    server(options, kindaConfig);
 });
 // 打包命令
 // TODO 待完善
@@ -55,6 +59,6 @@ program
     .description('build optimized project')
     .addOption(new Option('-w --watch', 'keep watching file changes, rebuild when file changes'))
     .action((options) => {
-    build(options);
+    build(options, kindaConfig);
 });
 program.parse(process.argv);

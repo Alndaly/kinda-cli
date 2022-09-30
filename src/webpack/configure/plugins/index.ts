@@ -22,6 +22,7 @@ export const getWebpackPlugins = () => {
 
 	let htmlPlugin = new HtmlWebpackPlugin({
 		template: path.resolve(__dirname, '../templates/index.template.html'),
+		meta: { viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no' }
 	})
 	plugins.push(htmlPlugin)
 

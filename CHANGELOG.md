@@ -2,6 +2,45 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.20](https://github.com/Alndaly/kinda-cli/compare/v0.0.19...v0.0.20) (2022-09-30)
+
+### [0.0.19](https://github.com/Alndaly/kinda-cli/compare/v0.0.18...v0.0.19) (2022-09-29)
+
+
+### Features
+
+* 🎸 修改loaders ([9141be3](https://github.com/Alndaly/kinda-cli/commit/9141be3a5d1388f2e35dfa935fe82ae2cd69e965))
+* 🎸 初步增加vite配置 ([17375b3](https://github.com/Alndaly/kinda-cli/commit/17375b31d86aeebdf9ea77f089c034a8fdb2c741))
+* 🎸 增加文件配置分析 ([3f4c3c7](https://github.com/Alndaly/kinda-cli/commit/3f4c3c7e68de7e0e50617cbcf8976121e5c6af3d))
+* 🎸 增加默认webpack配置 ([5226172](https://github.com/Alndaly/kinda-cli/commit/5226172ac769876520c4354ffbd780b23e0984f7))
+
+
+### Bug Fixes
+
+* 🐛 解决loader查找的问题 ([8b964f6](https://github.com/Alndaly/kinda-cli/commit/8b964f6903f1bc4dbb76a41459df4cb618932ab1))
+
+### [0.0.18](https://github.com/Alndaly/kinda-cli/compare/v0.0.17...v0.0.18) (2022-09-27)
+
+
+### Bug Fixes
+
+* 🐛 修复异步 ([7a7575b](https://github.com/Alndaly/kinda-cli/commit/7a7575b57ad5ec28a64bbe52269ae85644f7b721))
+
+### [0.0.17](https://github.com/Alndaly/kinda-cli/compare/v0.0.16...v0.0.17) (2022-09-27)
+
+
+### Bug Fixes
+
+* 🐛 修改配置文件名 ([6472c1e](https://github.com/Alndaly/kinda-cli/commit/6472c1e58bc8314be8c4c8c690e4101504b6d56b))
+
+### [0.0.16](https://github.com/Alndaly/kinda-cli/compare/v0.0.15...v0.0.16) (2022-09-27)
+
+### [0.0.15](https://github.com/Alndaly/kinda-cli/compare/v0.0.14...v0.0.15) (2022-09-27)
+
+### [0.0.14](https://github.com/Alndaly/kinda-cli/compare/v0.0.13...v0.0.14) (2022-09-27)
+
+### [0.0.13](https://github.com/Alndaly/kinda-cli/compare/v0.0.12...v0.0.13) (2022-09-27)
+
 ### [0.0.12](https://github.com/Alndaly/kinda-cli/compare/v0.0.11...v0.0.12) (2022-09-27)
 
 ### [0.0.11](https://github.com/Alndaly/kinda-cli/compare/v0.0.10...v0.0.11) (2022-09-27)

@@ -22,7 +22,7 @@
 ### 下载kinda脚手架
 
 ```shell
-npm i -g kinda-cli
+npm i -g @kinda/cli
 ```
 
 ### 新建项目
