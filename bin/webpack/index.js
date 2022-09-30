@@ -1,18 +1,16 @@
 import { getDevServer } from './configure/devServer/index.js';
 import { getWebpackPlugins } from '../webpack/configure/plugins/index.js';
 import path from 'path';
-import { dirname } from "node:path";
 import { fileURLToPath } from "node:url";
 import { getModuleConfig } from './configure/module/index.js';
 const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
 const getDefaultConfigure = (environment) => {
     const defaultConfigure = {
         mode: environment == 'production' ? 'production' : 'development',
         devtool: 'inline-source-map',
         output: {
             filename: '[name].bundle.js',
-            path: path.resolve(__dirname, 'dist'),
+            path: path.resolve('dist'),
         },
         resolve: {
             extensions: ['.tsx', '.ts', '.js'],

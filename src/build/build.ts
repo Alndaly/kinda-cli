@@ -18,6 +18,7 @@ export default async function (options: BuildOptions, kindaConfig: KindaConfigur
 			watching.close(() => {
 				console.log("\nWebpack compier Watching Ended.");
 			});
+			process.exit(1)
 		});
 	}
 
