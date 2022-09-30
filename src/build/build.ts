@@ -41,7 +41,8 @@ export default async function (options: BuildOptions, kindaConfig: KindaConfigur
 			}
 
 			compiler.close((closeErr) => {
-				console.log(closeErr)
+				closeErr && console.log(closeErr)
+				process.exit(1)
 			});
 		});
 	}

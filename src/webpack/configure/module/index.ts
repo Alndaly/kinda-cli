@@ -14,7 +14,7 @@ export const getModuleConfig = () => {
                 test: /\.s[ac]ss$/i,
                 use: [
                     // 将 JS 字符串生成为 style 节点
-                    path.resolve(__dirname, '../../../../node_modules/style-loader/dist/index.js'),
+                    path.resolve(__dirname, '../../../../node_modules/style-loader/dist/cjs.js'),
                     // 将 CSS 转化成 CommonJS 模块
                     path.resolve(__dirname, '../../../../node_modules/css-loader/dist/index.js'),
                     // 自定义css文件前缀
@@ -26,7 +26,13 @@ export const getModuleConfig = () => {
             {
                 test: /\.[jt]sx?$/i,
                 // use: path.resolve(__dirname, '../../../../node_modules/ts-loader/dist/index.js'),
-                use: path.resolve(__dirname, '../../../../node_modules/babel-loader/lib/index.js'),
+                loader: path.resolve(__dirname, '../../../../node_modules/babel-loader/lib/index.js'),
+                options: {
+                    presets: [
+                        path.resolve(__dirname, '../../../../node_modules/@babel/preset-env/lib/index.js'),
+                        path.resolve(__dirname, '../../../../node_modules/@babel/preset-react/lib/index.js'),
+                    ],
+                },
                 exclude: /node_modules/,
             },
         ]
