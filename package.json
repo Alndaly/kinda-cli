@@ -1,6 +1,6 @@
 {
   "name": "@kinda/cli",
-  "version": "0.0.19",
+  "version": "0.0.20",
   "author": "alnda",
   "type": "module",
   "description": "kinda脚手架",
