@@ -1,6 +1,7 @@
 import { KindaConfiguration } from './../types/index.js';
 import { getWatchOptions, watchHandlers } from './watch/index.js';
 import webpack from 'webpack';
+import chalk from 'chalk';
 import { getWebpackConfiguration } from '../webpack/index.js';
 import { BuildOptions } from '../types/index.js'
 
@@ -34,11 +35,17 @@ export default async function (options: BuildOptions, kindaConfig: KindaConfigur
 			const info = stats.toJson();
 
 			if (stats.hasErrors()) {
-				console.error(info.errors);
+				console.log(``)
+				for (let item of info.errors) {
+					console.warn(`${chalk.red(item.message)}`);
+				}
 			}
 
 			if (stats.hasWarnings()) {
-				console.warn(info.warnings);
+				// console.warn(info.warnings);
+				for (let item of info.warnings) {
+					console.warn(`${chalk.yellow(item.message)}`);
+				}
 			}
 
 			compiler.close((closeErr) => {

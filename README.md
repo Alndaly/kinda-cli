@@ -10,7 +10,7 @@
 - [x] 支持cli本地开发服务器
 - [x] 支持热更新
 - [x] 支持cli构建打包
-- [ ] 支持kinda.config.js配置文件
+- [x] 支持kinda.config.js配置文件
 - [x] 支持webpack
 - [ ] 支持vite
 - [ ] 支持组件模版

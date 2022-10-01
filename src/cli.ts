@@ -5,12 +5,10 @@ import create from './create/create.js';
 import server from './server/server.js';
 import logger from './logger/index.js';
 import build from './build/build.js';
-import chalk from 'chalk';
 import semver from 'semver';
 import { createRequire } from 'module';
 import { template_list, structure_list } from './common/config/config.js';
 import { getConfigFile } from './common/utils/configUtil.js';
-const kindaConfig = await getConfigFile(path.resolve());
 import path from 'path'
 
 //@ts-ignore
@@ -25,7 +23,8 @@ if (!semver.satisfies(process.version, requiredVersion)) {
 	process.exit(1);
 }
 
-console.log('基础配置:', kindaConfig)
+// 获取kinda.config.js基础配置
+const kindaConfig = await getConfigFile(path.resolve());
 
 program
 	.name('kinda-cli')

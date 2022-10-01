@@ -11,7 +11,7 @@ const configurations = {
             mode: 'development',
             devtool: 'inline-source-map',
             output: {
-                filename: '[name].[hash].js',
+                filename: '[name].[fullhash].js',
                 path: path.resolve('dist'),
             },
             resolve: {
@@ -31,7 +31,7 @@ const configurations = {
             mode: 'production',
             devtool: 'inline-source-map',
             output: {
-                filename: '[name].[hash].js',
+                filename: '[name].[fullhash].js',
                 path: path.resolve('dist'),
             },
             resolve: {
