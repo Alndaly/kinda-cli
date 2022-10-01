@@ -7,11 +7,11 @@ import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
 import { CleanWebpackPlugin } from 'clean-webpack-plugin';
-export const getWebpackPlugins = () => {
+export const getDefaultWebpackPlugins = () => {
     const plugins = [];
     let progressPlugin = new WebpackBar({
         color: "#85d",
-        basic: false,
+        basic: true,
         profile: false, // 默认false，启用探查器。
     });
     plugins.push(progressPlugin);

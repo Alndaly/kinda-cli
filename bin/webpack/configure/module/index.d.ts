@@ -1,2 +1,2 @@
 import type { ModuleOptions } from 'webpack';
-export declare const getModuleConfig: () => ModuleOptions;
+export declare const getDefaultModuleConfig: () => ModuleOptions;

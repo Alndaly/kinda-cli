@@ -1,11 +1,10 @@
 import webpack from 'webpack';
-import { getWebpackConfigure } from '../webpack/index.js';
+import { getWebpackConfiguration } from '../webpack/index.js';
 import webpackDevServer from 'webpack-dev-server';
 import { viteServer } from '../vite/index.js';
 export default (options, kindaConfig) => {
-    const webpackConfigure = getWebpackConfigure(kindaConfig.webpackConfiguration, 'development');
-    const compiler = webpack(webpackConfigure);
-    const devServerOptions = { ...(webpackConfigure.devServer) };
+    const webpackConfiguration = getWebpackConfiguration(kindaConfig.webpackConfiguration, 'development');
+    const compiler = webpack(webpackConfiguration);
     const runServer = async (server) => {
         console.log('Starting server...');
         if (kindaConfig.structure === 'webpack') {
@@ -36,6 +35,7 @@ export default (options, kindaConfig) => {
     };
     const getFinalOptions = (options) => {
         const { port } = options;
+        const devServerOptions = webpackConfiguration.devServer;
         if (port) {
             return { ...devServerOptions, ...options };
         }

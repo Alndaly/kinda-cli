@@ -1,7 +1,7 @@
 import path from 'path';
-export const getDevServer = () => {
+export const getDefaultDevServer = () => {
     const devServer = {
-        port: 3001,
+        port: 3000,
         open: false,
         hot: true,
         host: 'local-ip',
