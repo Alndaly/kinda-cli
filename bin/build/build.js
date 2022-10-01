@@ -1,10 +1,10 @@
-import { getWatchOptions, watchHandlers } from './../webpack/configure/watch/index.js';
+import { getWatchOptions, watchHandlers } from './watch/index.js';
 import webpack from 'webpack';
-import { getWebpackConfigure } from '../webpack/index.js';
+import { getWebpackConfiguration } from '../webpack/index.js';
 export default async function (options, kindaConfig) {
     const { watch } = options;
-    const webpackConfigure = getWebpackConfigure(kindaConfig.webpackConfiguration, 'production');
-    const compiler = webpack(webpackConfigure);
+    const webpackConfiguration = getWebpackConfiguration(kindaConfig.webpackConfiguration, 'production');
+    const compiler = webpack(webpackConfiguration);
     // 注意，这部分是一旦检测到文件更新，就触发重新编译，并不是热更新！
     function buildWithWatch() {
         const watching = compiler.watch(getWatchOptions(), watchHandlers);

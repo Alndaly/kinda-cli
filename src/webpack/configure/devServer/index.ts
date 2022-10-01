@@ -1,9 +1,9 @@
 import path from 'path'
 import type { Configuration } from 'webpack';
 
-export const getDevServer = () => {
+export const getDefaultDevServer = () => {
     const devServer: Configuration["devServer"] = {
-        port: 3001, // 服务启动端口号
+        port: 3000, // 服务启动端口号
         open: false, // 是否自动开启默认浏览器
         hot: true, // 是否开启HMR
         host: 'local-ip', // 指定要使用的 host。如果你想让你的服务器可以被外部访问
