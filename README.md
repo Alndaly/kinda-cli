@@ -78,6 +78,6 @@ kinda -h
 
 ```shell
 git clone https://github.com/Alndaly/kinda-cli
-cd create-kinda
+cd kinda-cli
 yarn
 ```
