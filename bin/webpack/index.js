@@ -8,11 +8,11 @@ const configurations = {
             mode: 'development',
             devtool: 'inline-source-map',
             output: {
-                filename: '[name].[hash].js',
+                filename: '[name].[fullhash].js',
                 path: path.resolve('dist'),
             },
             resolve: {
-                extensions: ['.tsx', '.ts', '.js'],
+                extensions: ['.tsx', 'jsx', '.ts', '.js'],
             },
             module: getDefaultModuleConfig(),
             devServer: getDefaultDevServer(),
@@ -28,7 +28,7 @@ const configurations = {
             mode: 'production',
             devtool: 'inline-source-map',
             output: {
-                filename: '[name].[hash].js',
+                filename: '[name].[fullhash].js',
                 path: path.resolve('dist'),
             },
             resolve: {
