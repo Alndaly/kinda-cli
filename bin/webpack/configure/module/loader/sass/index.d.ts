@@ -1,4 +1,5 @@
-export declare const getSassLoader: () => ({
+import { Environement } from './../../../../../types/index.js';
+export declare const getSassLoader: (environement: Environement) => ({
     loader: string;
     options: {
         sourceMap?: undefined;

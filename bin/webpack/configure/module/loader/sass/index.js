@@ -1,5 +1,6 @@
 import path from 'path';
 import { fileURLToPath } from 'url';
+import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 const __dirname = fileURLToPath(new URL('.', import.meta.url));
 const getStyle = () => {
     // 将 JS 字符串生成为 style 节点
@@ -17,7 +18,47 @@ const getSass = () => {
     // 将 Sass 编译成 CSS
     return path.resolve(__dirname, '../../../../../../node_modules/sass-loader/dist/cjs.js');
 };
-export const getSassLoader = () => {
+export const getSassLoader = (environement) => {
+    // 生产环境
+    if (environement === 'production') {
+        return [
+            {
+                loader: MiniCssExtractPlugin.loader,
+                options: {}
+            },
+            {
+                loader: getCss(),
+                options: {
+                    sourceMap: true,
+                    modules: {
+                        localIdentName: '[path]__[name]__[local]__[hash:base64:5]'
+                    },
+                    importLoaders: 2
+                }
+            },
+            {
+                loader: getPostCss(),
+                options: {
+                    sourceMap: true,
+                    postcssOptions: {
+                        plugins: [
+                            [
+                                "postcss-preset-env",
+                                {
+                                // Options
+                                },
+                            ],
+                        ],
+                    },
+                }
+            },
+            {
+                loader: getSass(),
+                options: {}
+            },
+        ];
+    }
+    // 开发环境
     return [
         {
             loader: getStyle(),
