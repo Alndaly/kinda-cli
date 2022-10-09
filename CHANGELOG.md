@@ -2,6 +2,14 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.22](https://github.com/Alndaly/kinda-cli/compare/v0.0.21...v0.0.22) (2022-10-09)
+
+
+### Features
+
+* 🎸 增加css loader的一些配置 ([e824d39](https://github.com/Alndaly/kinda-cli/commit/e824d39be1813e361b04d7e3eb63614ca4eba051))
+* 🎸 支持css默认模块化并且完成样式隔离 ([32b6084](https://github.com/Alndaly/kinda-cli/commit/32b608490c27a9745c16f99913d4842b6bf482a1))
+
 ### [0.0.21](https://github.com/Alndaly/kinda-cli/compare/v0.0.20...v0.0.21) (2022-09-30)
 
 

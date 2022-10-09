@@ -14,9 +14,9 @@ const configurations = {
             resolve: {
                 extensions: ['.tsx', 'jsx', '.ts', '.js'],
             },
-            module: getDefaultModuleConfig(),
+            module: getDefaultModuleConfig('development'),
             devServer: getDefaultDevServer(),
-            plugins: getDefaultWebpackPlugins(),
+            plugins: getDefaultWebpackPlugins('development'),
             optimization: {
                 usedExports: true,
             }
@@ -34,9 +34,8 @@ const configurations = {
             resolve: {
                 extensions: ['.tsx', '.ts', '.js'],
             },
-            module: getDefaultModuleConfig(),
-            devServer: getDefaultDevServer(),
-            plugins: getDefaultWebpackPlugins()
+            module: getDefaultModuleConfig('production'),
+            plugins: getDefaultWebpackPlugins('production')
         };
         return defaultConfigure;
     }

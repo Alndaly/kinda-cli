@@ -1,9 +1,10 @@
+import { Environement } from './../../../types/index.js';
 import type { ModuleOptions } from 'webpack';
 import { getBabelLoader } from './loader/babel/index.js'
 import { getJsonLoader } from './loader/json/index.js'
 import { getSassLoader } from './loader/sass/index.js'
 
-export const getDefaultModuleConfig = () => {
+export const getDefaultModuleConfig = (environement: Environement) => {
     const module: ModuleOptions = {
         rules: [
             {
@@ -12,7 +13,7 @@ export const getDefaultModuleConfig = () => {
             },
             {
                 test: /\.s[ac]ss$/i,
-                use: getSassLoader()
+                use: getSassLoader(environement)
             },
             {
                 test: /\.[jt]sx?$/i,
