@@ -21,15 +21,33 @@ export const getSassLoader = () => {
     return [
         {
             loader: getStyle(),
-            options: {}
+            options: {},
         },
         {
             loader: getCss(),
-            options: {}
+            options: {
+                sourceMap: true,
+                modules: {
+                    localIdentName: '[path]__[name]__[local]__[hash:base64:5]'
+                },
+                importLoaders: 2
+            }
         },
         {
             loader: getPostCss(),
-            options: {}
+            options: {
+                sourceMap: true,
+                postcssOptions: {
+                    plugins: [
+                        [
+                            "postcss-preset-env",
+                            {
+                            // Options
+                            },
+                        ],
+                    ],
+                },
+            }
         },
         {
             loader: getSass(),
