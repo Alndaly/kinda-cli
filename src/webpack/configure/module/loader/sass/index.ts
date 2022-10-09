@@ -9,17 +9,17 @@ const getStyle = () => {
 
 const getPostCss = () => {
     // 自定义css文件前缀
-    return path.resolve(__dirname, '../../../../../../node_modules/postcss-loader/dist/index.js')
+    return path.resolve(__dirname, '../../../../../../node_modules/postcss-loader/dist/cjs.js')
 }
 
 const getCss = () => {
     // 将 CSS 转化成 CommonJS 模块
-    return path.resolve(__dirname, '../../../../../../node_modules/css-loader/dist/index.js')
+    return path.resolve(__dirname, '../../../../../../node_modules/css-loader/dist/cjs.js')
 }
 
 const getSass = () => {
     // 将 Sass 编译成 CSS
-    return path.resolve(__dirname, '../../../../../../node_modules/sass-loader/dist/index.js')
+    return path.resolve(__dirname, '../../../../../../node_modules/sass-loader/dist/cjs.js')
 }
 
 export const getSassLoader = () => {
