@@ -30,6 +30,7 @@ const configurations = {
             output: {
                 filename: '[name].[fullhash].js',
                 path: path.resolve('dist'),
+                publicPath: '/'
             },
             resolve: {
                 extensions: ['.tsx', '.ts', '.js'],

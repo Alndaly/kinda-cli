@@ -1,6 +1,7 @@
 import path from 'path';
 export const getDefaultDevServer = () => {
     const devServer = {
+        historyApiFallback: true,
         port: 3000,
         open: false,
         hot: true,

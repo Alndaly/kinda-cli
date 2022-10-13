@@ -3,6 +3,7 @@ import type { Configuration } from 'webpack';
 
 export const getDefaultDevServer = () => {
     const devServer: Configuration["devServer"] = {
+        historyApiFallback: true, // 当使用HTML5 History Api的时候，有可能会发生url not found的状态，设置这个微true使其正常
         port: 3000, // 服务启动端口号
         open: false, // 是否自动开启默认浏览器
         hot: true, // 是否开启HMR
