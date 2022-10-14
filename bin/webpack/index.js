@@ -10,16 +10,24 @@ const configurations = {
             output: {
                 filename: '[name].[fullhash].js',
                 path: path.resolve('dist'),
+                pathinfo: true,
+                sourceMapFilename: "sourcemaps/[file].map",
+                crossOriginLoading: "use-credentials", // 枚举
             },
             resolve: {
                 extensions: ['.tsx', 'jsx', '.ts', '.js'],
+                alias: {},
             },
             module: getDefaultModuleConfig('development'),
             devServer: getDefaultDevServer(),
             plugins: getDefaultWebpackPlugins('development'),
             optimization: {
                 usedExports: true,
-            }
+            },
+            performance: {
+                hints: "warning", // 枚举
+            },
+            stats: 'errors-only',
         };
         return defaultConfigure;
     },
@@ -30,11 +38,19 @@ const configurations = {
             output: {
                 filename: '[name].[fullhash].js',
                 path: path.resolve('dist'),
-                publicPath: '/'
+                publicPath: '/',
+                pathinfo: true,
+                sourceMapFilename: "sourcemaps/[file].map",
+                crossOriginLoading: "use-credentials", // 枚举
             },
             resolve: {
                 extensions: ['.tsx', '.ts', '.js'],
+                alias: {}
             },
+            performance: {
+                hints: "warning", // 枚举
+            },
+            stats: 'errors-only',
             module: getDefaultModuleConfig('production'),
             plugins: getDefaultWebpackPlugins('production')
         };
