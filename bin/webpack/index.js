@@ -25,7 +25,11 @@ const configurations = {
                 usedExports: true,
             },
             performance: {
-                hints: "warning", // 枚举
+                hints: "warning",
+                //入口起点的最大体积
+                maxEntrypointSize: 50000000,
+                //生成文件的最大体积
+                maxAssetSize: 30000000,
             },
             stats: 'errors-only',
         };
@@ -48,7 +52,11 @@ const configurations = {
                 alias: {}
             },
             performance: {
-                hints: "warning", // 枚举
+                hints: "warning",
+                //入口起点的最大体积
+                maxEntrypointSize: 50000000,
+                //生成文件的最大体积
+                maxAssetSize: 30000000,
             },
             stats: 'errors-only',
             module: getDefaultModuleConfig('production'),
