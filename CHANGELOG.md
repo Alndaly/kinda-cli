@@ -2,6 +2,22 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+### [0.0.23](https://github.com/Alndaly/kinda-cli/compare/v0.0.22...v0.0.23) (2022-10-17)
+
+
+### Features
+
+* 🎸 优化webpack配置 ([e5f3d43](https://github.com/Alndaly/kinda-cli/commit/e5f3d43af8c382ef351d495d7c62006763822c8c))
+* 🎸 优化webpack配置文件 ([83cd3ca](https://github.com/Alndaly/kinda-cli/commit/83cd3ca7ca88b62c6f154c291494fae7c59e3ab1))
+* 🎸 修复devServer无法找到url路径的问题 ([d4693cc](https://github.com/Alndaly/kinda-cli/commit/d4693ccf0554e44767133d62254a8e07d9cd5dd2))
+* 🎸 修改文件最大体积限制 ([9b474f6](https://github.com/Alndaly/kinda-cli/commit/9b474f62b4ce118112eea2dc7688942011deee0f))
+* 🎸 增加src路径映射 ([4f1db2e](https://github.com/Alndaly/kinda-cli/commit/4f1db2e334653e9bb24a050f4ab5f765d118f349))
+
+
+### Bug Fixes
+
+* 🐛 修改根div root属为class ([ff936b4](https://github.com/Alndaly/kinda-cli/commit/ff936b4528290d2fd3b032c185bd667b5c2219e4))
+
 ### [0.0.22](https://github.com/Alndaly/kinda-cli/compare/v0.0.21...v0.0.22) (2022-10-09)
 
 
