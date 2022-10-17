@@ -16,7 +16,9 @@ const configurations = {
             },
             resolve: {
                 extensions: ['.tsx', 'jsx', '.ts', '.js'],
-                alias: {},
+                alias: {
+                    '@': '/src'
+                },
             },
             module: getDefaultModuleConfig('development'),
             devServer: getDefaultDevServer(),
@@ -63,7 +65,9 @@ const configurations = {
             },
             resolve: {
                 extensions: ['.tsx', '.ts', '.js'],
-                alias: {}
+                alias: {
+                    '@': '/src'
+                }
             },
             performance: {
                 hints: "warning",

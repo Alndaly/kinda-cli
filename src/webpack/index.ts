@@ -2,6 +2,7 @@ import { Environement } from './../types/index.js';
 import { getDefaultDevServer } from './configure/devServer/index.js';
 import { getDefaultWebpackPlugins } from '../webpack/configure/plugins/index.js';
 import type { Configuration } from 'webpack';
+import webpack from 'webpack';
 import path from 'path';
 import { getDefaultModuleConfig } from './configure/module/index.js';
 
@@ -19,7 +20,9 @@ const configurations = {
             },
             resolve: {
                 extensions: ['.tsx', 'jsx', '.ts', '.js'],
-                alias: {},
+                alias: {
+                    '@': '/src'
+                },
             },
             module: getDefaultModuleConfig('development'),
             devServer: getDefaultDevServer(),
@@ -66,7 +69,9 @@ const configurations = {
             },
             resolve: {
                 extensions: ['.tsx', '.ts', '.js'],
-                alias: {}
+                alias: {
+                    '@': '/src'
+                }
             },
             performance: {
                 hints: "warning", // 枚举
