@@ -30,11 +30,25 @@ const configurations = {
             performance: {
                 hints: "warning", // 枚举
                 //入口起点的最大体积
-                maxEntrypointSize: 50000000,
+                maxEntrypointSize: 5000000,
                 //生成文件的最大体积
-                maxAssetSize: 30000000,
+                maxAssetSize: 3000000,
             },
-            stats: 'errors-only',
+            stats: {
+                assets: true,
+                colors: true,
+                errors: true,
+                errorDetails: true,
+                hash: true,
+                publicPath: true,
+                modules: true,
+                builtAt: true,
+                performance: true,
+                reasons: true,
+                version: true,
+                timings: true,
+                warnings: true,
+            },
         };
         return defaultConfigure;
     },
@@ -57,11 +71,25 @@ const configurations = {
             performance: {
                 hints: "warning", // 枚举
                 //入口起点的最大体积
-                maxEntrypointSize: 50000000,
+                maxEntrypointSize: 5000000,
                 //生成文件的最大体积
-                maxAssetSize: 30000000,
+                maxAssetSize: 3000000,
             },
-            stats: 'errors-only',
+            stats: {
+                assets: true,
+                colors: true,
+                errors: true,
+                errorDetails: true,
+                hash: true,
+                publicPath: true,
+                modules: true,
+                builtAt: true,
+                performance: true,
+                reasons: true,
+                version: true,
+                timings: true,
+                warnings: true,
+            },
             module: getDefaultModuleConfig('production'),
             plugins: getDefaultWebpackPlugins('production')
         };
