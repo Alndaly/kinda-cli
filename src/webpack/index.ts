@@ -79,6 +79,17 @@ const configurations = {
                 version: true,
                 timings: true,
                 warnings: true,
+                groupAssetsByEmitStatus: true,
+                groupAssetsByExtension: true,
+                groupAssetsByChunk: true,
+                groupAssetsByInfo: true,
+                groupAssetsByPath: true,
+                assetsSort: 'size',
+                moduleAssets: true,
+                nestedModules: true,
+                cachedModules: true,
+                runtimeModules: true,
+                dependentModules: true,
             },
         };
         return defaultConfigure;
@@ -103,6 +114,12 @@ const configurations = {
             optimization: {
                 usedExports: true,
                 chunkIds: 'named',
+                removeEmptyChunks: true,
+                runtimeChunk: {
+                    name: (entrypoint: any) => `runtime~${entrypoint.name}`
+                },
+                sideEffects: true,
+                removeAvailableModules: true,
                 minimizer: [
                     new TerserPlugin({
                         parallel: true,
@@ -154,6 +171,17 @@ const configurations = {
                 version: true,
                 timings: true,
                 warnings: true,
+                groupAssetsByEmitStatus: true,
+                groupAssetsByExtension: true,
+                groupAssetsByChunk: true,
+                groupAssetsByInfo: true,
+                groupAssetsByPath: true,
+                assetsSort: 'size',
+                moduleAssets: true,
+                nestedModules: true,
+                cachedModules: true,
+                runtimeModules: true,
+                dependentModules: true,
             },
             module: getDefaultModuleConfig('production'),
             plugins: getDefaultWebpackPlugins('production')
