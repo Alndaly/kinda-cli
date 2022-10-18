@@ -5,12 +5,13 @@ import type { Configuration } from 'webpack';
 import webpack from 'webpack';
 import path from 'path';
 import { getDefaultModuleConfig } from './configure/module/index.js';
+import TerserPlugin from 'terser-webpack-plugin';
 
 const configurations = {
     'development': () => {
         const defaultConfigure: Configuration = {
             mode: 'development',
-            devtool: 'inline-source-map',
+            devtool: false,
             output: {
                 filename: '[name].[fullhash].js',
                 path: path.resolve('dist'),
@@ -24,18 +25,45 @@ const configurations = {
                     '@': '/src'
                 },
             },
+            optimization: {
+                usedExports: true,
+                chunkIds: 'named',
+                minimizer: [
+                    new TerserPlugin({
+                        parallel: true,
+                        terserOptions: {
+                            // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
+                        },
+                    }),
+                ],
+                splitChunks: {
+                    automaticNameDelimiter: '~',
+                    chunks: 'all',
+                    minSize: 30000,
+                    maxSize: 100000,
+                    cacheGroups: {
+                        defaultVendors: {
+                            test: /[\\/]node_modules[\\/]/,
+                            priority: -10,
+                            reuseExistingChunk: true,
+                        },
+                        default: {
+                            minChunks: 2,
+                            priority: -20,
+                            reuseExistingChunk: true,
+                        },
+                    }
+                }
+            },
             module: getDefaultModuleConfig('development'),
             devServer: getDefaultDevServer(),
             plugins: getDefaultWebpackPlugins('development'),
-            optimization: {
-                usedExports: true,
-            },
             performance: {
-                hints: "warning", // 枚举
+                hints: "warning",
                 //入口起点的最大体积
-                maxEntrypointSize: 5000000,
+                maxEntrypointSize: 400000,
                 //生成文件的最大体积
-                maxAssetSize: 3000000,
+                maxAssetSize: 100000,
             },
             stats: {
                 assets: true,
@@ -58,7 +86,6 @@ const configurations = {
     'production': () => {
         const defaultConfigure: Configuration = {
             mode: 'production',
-            devtool: 'inline-source-map',
             output: {
                 filename: '[name].[fullhash].js',
                 path: path.resolve('dist'),
@@ -73,12 +100,45 @@ const configurations = {
                     '@': '/src'
                 }
             },
+            optimization: {
+                usedExports: true,
+                chunkIds: 'named',
+                minimizer: [
+                    new TerserPlugin({
+                        parallel: true,
+                        terserOptions: {
+                            // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
+                        },
+                    }),
+                ],
+                splitChunks: {
+                    automaticNameDelimiter: '~',
+                    chunks: 'all',
+                    minSize: 30000,
+                    maxSize: 100000,
+                    cacheGroups: {
+                        defaultVendors: {
+                            test: /[\\/]node_modules[\\/]/,
+                            priority: -10,
+                            reuseExistingChunk: true,
+                        },
+                        default: {
+                            minChunks: 2,
+                            priority: -20,
+                            reuseExistingChunk: true,
+                        },
+                    }
+                }
+            },
             performance: {
-                hints: "warning", // 枚举
+                assetFilter: function (assetFilename: string) {
+                    return !/\.map$/.test(assetFilename);
+                },
+                hints: "warning",
                 //入口起点的最大体积
-                maxEntrypointSize: 5000000,
+                maxEntrypointSize: 400000,
                 //生成文件的最大体积
-                maxAssetSize: 3000000,
+                maxAssetSize: 100000,
             },
             stats: {
                 assets: true,

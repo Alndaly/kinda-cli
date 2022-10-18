@@ -59,15 +59,16 @@
     "semver": "^7.3.7",
     "serve-handler": "^6.1.3",
     "style-loader": "^3.3.1",
+    "terser-webpack-plugin": "^5.3.6",
     "ts-loader": "^9.4.1",
     "typescript": "^4.9.0-dev.20220927",
+    "uglifyjs-webpack-plugin": "^2.2.0",
     "util": "^0.12.4",
     "vite": "^3.1.4",
     "webpack": "^5.74.0",
     "webpack-dev-server": "^4.11.1",
     "webpack-merge": "^5.8.0",
-    "webpackbar": "^5.0.2",
-    "uglifyjs-webpack-plugin": "^2.2.0"
+    "webpackbar": "^5.0.2"
   },
   "devDependencies": {
     "@commitlint/cli": "^17.1.2",
