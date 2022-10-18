@@ -31,8 +31,8 @@ export const getDefaultWebpackPlugins = (environement) => {
     });
     environement === 'production' && plugins.push(MiniCssPlugin);
     let sourceMapPlugin = new webpack.SourceMapDevToolPlugin({
-        filename: '[name].js.map',
+        filename: '[name].[fullhash].js.map',
     });
-    environement && plugins.push(sourceMapPlugin);
+    environement !== 'production' && plugins.push(sourceMapPlugin);
     return plugins;
 };
