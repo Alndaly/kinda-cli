@@ -1,3 +1,4 @@
+import { getDefaultAlias } from './configure/alias/index.js';
 import { Environement } from './../types/index.js';
 import { getDefaultDevServer } from './configure/devServer/index.js';
 import { getDefaultWebpackPlugins } from '../webpack/configure/plugins/index.js';
@@ -21,9 +22,7 @@ const configurations = {
             },
             resolve: {
                 extensions: ['.tsx', 'jsx', '.ts', '.js'],
-                alias: {
-                    '@': '/src'
-                },
+                alias: getDefaultAlias(),
             },
             optimization: {
                 usedExports: true,
@@ -107,9 +106,7 @@ const configurations = {
             },
             resolve: {
                 extensions: ['.tsx', '.ts', '.js'],
-                alias: {
-                    '@': '/src'
-                }
+                alias: getDefaultAlias()
             },
             optimization: {
                 usedExports: true,
