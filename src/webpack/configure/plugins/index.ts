@@ -1,10 +1,11 @@
 import { Environement } from './../../../types/index.js';
 import WebpackBar from 'webpackbar';
 import webpack from 'webpack';
-import HtmlWebpackPlugin from 'html-webpack-plugin'
-import path from 'path'
-import { dirname } from "node:path"
-import { fileURLToPath } from "node:url"
+import HtmlWebpackPlugin from 'html-webpack-plugin';
+import path from 'path';
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+import { BundleAnalyzerPlugin } from 'webpack-bundle-analyzer';
 import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 
 const __filename = fileURLToPath(import.meta.url);
@@ -43,6 +44,17 @@ export const getDefaultWebpackPlugins = (environement: Environement) => {
 		filename: '[name].[fullhash].js.map',
 	})
 	environement !== 'production' && plugins.push(sourceMapPlugin)
+
+	// let bundleAnalyzerPlugin = new BundleAnalyzerPlugin({
+	// 	analyzerPort: 8081,
+	// 	generateStatsFile: true, // 是否生成stats.json文件
+	// })
+	// environement !== 'production' && plugins.push(bundleAnalyzerPlugin)
+
+	// let dllReferencePlugin = new webpack.DllReferencePlugin({
+	// 	manifest: path.resolve(__dirname, 'dist/dll', 'mainfist.json')
+	// })
+	// environement && plugins.push(dllReferencePlugin)
 
 	return plugins;
 }

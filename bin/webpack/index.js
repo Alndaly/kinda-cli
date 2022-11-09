@@ -21,10 +21,14 @@ const configurations = {
                 alias: getDefaultAlias(),
             },
             optimization: {
+                emitOnErrors: true,
                 usedExports: true,
                 chunkIds: 'named',
+                removeAvailableModules: false,
+                removeEmptyChunks: false,
                 minimizer: [
                     new TerserPlugin({
+                        extractComments: true,
                         parallel: true,
                         terserOptions: {
                         // https://github.com/webpack-contrib/terser-webpack-plugin#terseroptions
@@ -34,6 +38,8 @@ const configurations = {
                 splitChunks: {
                     automaticNameDelimiter: '~',
                     chunks: 'all',
+                    maxAsyncRequests: 30,
+                    maxInitialRequests: 30,
                     minSize: 30000,
                     maxSize: 100000,
                     cacheGroups: {
@@ -56,9 +62,9 @@ const configurations = {
             performance: {
                 hints: "warning",
                 //入口起点的最大体积
-                maxEntrypointSize: 400000,
+                maxEntrypointSize: 700000,
                 //生成文件的最大体积
-                maxAssetSize: 100000,
+                maxAssetSize: 200000,
             },
             stats: {
                 assets: true,
@@ -146,9 +152,9 @@ const configurations = {
                 },
                 hints: "warning",
                 //入口起点的最大体积
-                maxEntrypointSize: 400000,
+                maxEntrypointSize: 700000,
                 //生成文件的最大体积
-                maxAssetSize: 100000,
+                maxAssetSize: 200000,
             },
             stats: {
                 assets: true,

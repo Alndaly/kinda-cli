@@ -66,6 +66,7 @@
     "util": "^0.12.4",
     "vite": "^3.1.4",
     "webpack": "^5.74.0",
+    "webpack-bundle-analyzer": "^4.7.0",
     "webpack-dev-server": "^4.11.1",
     "webpack-merge": "^5.8.0",
     "webpackbar": "^5.0.2"
@@ -80,6 +81,7 @@
     "@types/lodash": "^4.14.185",
     "@types/semver": "^7.3.12",
     "@types/uglifyjs-webpack-plugin": "^1.1.2",
+    "@types/webpack-bundle-analyzer": "^4.6.0",
     "@types/webpackbar": "^4.0.3",
     "commitlint-config-cz": "^0.13.3",
     "cz-customizable": "^7.0.0",

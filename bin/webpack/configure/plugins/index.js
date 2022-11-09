@@ -34,5 +34,14 @@ export const getDefaultWebpackPlugins = (environement) => {
         filename: '[name].[fullhash].js.map',
     });
     environement !== 'production' && plugins.push(sourceMapPlugin);
+    // let bundleAnalyzerPlugin = new BundleAnalyzerPlugin({
+    // 	analyzerPort: 8081,
+    // 	generateStatsFile: true, // 是否生成stats.json文件
+    // })
+    // environement !== 'production' && plugins.push(bundleAnalyzerPlugin)
+    // let dllReferencePlugin = new webpack.DllReferencePlugin({
+    // 	manifest: path.resolve(__dirname, 'dist/dll', 'mainfist.json')
+    // })
+    // environement && plugins.push(dllReferencePlugin)
     return plugins;
 };
