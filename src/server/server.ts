@@ -22,7 +22,7 @@ export default (options: ServerOptions, kindaConfig: KindaConfiguration) => {
 				stopServer(server)
 			});
 		} else if (kindaConfig.structure === 'vite') {
-			const server = viteServer({}, 'development')
+			const server = await viteServer({}, 'development')
 			await server.listen();
 			server.printUrls();
 		} else {

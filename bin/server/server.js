@@ -19,7 +19,7 @@ export default (options, kindaConfig) => {
             });
         }
         else if (kindaConfig.structure === 'vite') {
-            const server = viteServer({}, 'development');
+            const server = await viteServer({}, 'development');
             await server.listen();
             server.printUrls();
         }
